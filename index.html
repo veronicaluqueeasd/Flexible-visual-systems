@@ -1,0 +1,314 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+   
+    <title>Flexible Visual Systems</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family: "Inter", sans-serif; 
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            text-transform: uppercase;
+            color: white;
+
+        }
+
+        :root{
+            --primary-size-modul: 100px;
+            --secondary-size-modul: calc((var(--primary-size-modul))/2);
+        }
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+
+        /*IZQUIERDA*/
+        #uno{
+            background-color: rgb(0, 0, 255);
+            width: 50%;
+            flex-grow: 1;
+        }
+
+        header{
+            height: 50%;
+        }
+
+        main{
+            display: flex;
+        }
+
+        main section:first-child{
+            width: 50%;
+        }
+
+        h1, h2{
+            margin: 10px 0 0 10px;
+        }
+
+        /*DERECHA*/
+        #dos{
+            flex-grow: 1;
+            width: 50vw;
+            flex-direction: column;
+        }
+
+        /*verde*/
+        .top, .right, .bottom, .left{
+            background: rgb(0, 0, 0);
+        }
+        
+        /*Arriba*/
+
+        /*REVISAR POSITION RELATIVE Y ABSOLUTE*/
+        #mXL{
+            position: relative;
+            width: 100%;
+            height: 50%;
+        }
+        
+        #mXL .top{
+            position: absolute;
+            top: 0;
+            left: var(--primary-size-modul);
+            right: var(--primary-size-modul);
+            height: var(--primary-size-modul);
+        }
+
+        #mXL .right{
+            position: absolute;
+            top: var(--primary-size-modul);
+            right: 0;
+            bottom: var(--primary-size-modul);
+            width: var(--primary-size-modul);
+        }
+
+        #mXL .bottom{
+            position: absolute;
+            bottom: 0;
+            left: var(--primary-size-modul);
+            right: var(--primary-size-modul);
+            height: var(--primary-size-modul);
+        }
+
+        #mXL .left{
+            position: absolute;
+            top: var(--primary-size-modul);
+            left: 0;
+            bottom: var(--primary-size-modul);
+            width: var(--primary-size-modul);
+            
+        } 
+
+
+        /*Abajo*/
+
+        #m{
+            position: relative;
+            width: 100%;
+            height: 50%;
+        }
+
+        #mL{
+            position: relative;
+            height: 50%;
+        }
+ 
+        #mL .top{
+            position: absolute;
+            top: 0;
+            left: var(--primary-size-modul);
+            right: var(--primary-size-modul);
+            height: var(--secondary-size-modul);
+        }
+
+        #mL .right{
+            position: absolute;
+            top: var(--secondary-size-modul);
+            right: 0;
+            bottom: var(--secondary-size-modul);
+            width: var(--primary-size-modul);
+        }
+
+        #mL .bottom{
+            position: absolute;
+            bottom: 0;
+            left: var(--primary-size-modul);
+            right: var(--primary-size-modul);
+            height: var(--secondary-size-modul);
+        }
+
+        #mL .left{
+            position: absolute;
+            top: var(--secondary-size-modul);
+            left: 0;
+            bottom: var(--secondary-size-modul);
+            width: var(--primary-size-modul);
+        } 
+
+        #mS{
+            display: flex;
+            height: 50%;
+            width: 100%;
+        }
+
+        .mXS{
+            position: relative;
+            height: 100%;
+            width: 50%;
+           
+        }
+
+        .mXS .top{
+            position: absolute;
+            top: 0;
+            left: var(--secondary-size-modul);
+            right: var(--secondary-size-modul);
+            height: var(--secondary-size-modul);
+        }
+
+        .mXS .right{
+            position: absolute;
+            top: var(--secondary-size-modul);
+            right: 0;
+            bottom: var(--secondary-size-modul);
+            width: var(--secondary-size-modul);
+        }
+
+        .mXS .bottom{
+            position: absolute;
+            bottom: 0;
+            left: var(--secondary-size-modul);
+            right: var(--secondary-size-modul);
+            height: var(--secondary-size-modul);
+        }
+
+        .mXS .left{
+            position: absolute;
+            top: var(--secondary-size-modul);
+            left: 0;
+            bottom: var(--secondary-size-modul);
+            width: var(--secondary-size-modul);
+        } 
+
+        @media ((min-width:481px) and (max-width: 1024px)){
+            :root{
+                --primary-size-modul: 80px;
+            }
+
+            .container{
+                flex-direction: column;
+                height: 200vh;
+            }
+
+            #uno, #dos{
+                width: 100%;
+            }
+
+        }
+        @media (max-width: 480px){
+            :root{
+                --primary-size-modul: 60px;
+            }
+            .container{
+                flex-direction: column;
+                height: 200vh;
+            }
+
+            #uno, #dos{
+                width: 100%;
+                flex-grow: 1;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!--IZQUIERDA-->
+        <div id="uno">
+            <!--arriba izq-->
+            <header>
+                <h1>flexible systems</h1>
+            </header>
+
+            <!--abajo izq-->
+            <main>
+
+                <!--izq-->
+                <section>
+                    <h2>ml</h2>
+                </section>
+
+                <!--der-->
+                <section>
+                    <h2>bcn</h2>
+                    <h2>hh</h2>
+                </section>
+
+            </main>
+
+        </div>
+
+
+        <!--DERECHA-->
+        <div id="dos">
+
+            <!--arriba der-->
+            <div id="mXL">
+                <div class="top"></div>
+                <div class="right"></div>
+                <div class="bottom"></div>
+                <div class="left"></div>
+            </div>
+
+            <!--abajo der-->
+            <div id="m">
+
+                <!--arriba-->
+                <div id="mL">
+                    <div class="top"></div>
+                    <div class="right"></div>
+                    <div class="bottom"></div>
+                    <div class="left"></div>
+                </div>
+
+                <!--abajo-->
+                <div id="mS">
+
+                    <!--izq-->
+                    <div class="mXS">
+                        <div class="top"></div>
+                        <div class="right"></div>
+                        <div class="bottom"></div>
+                        <div class="left"></div>
+                    </div>
+            
+                    <!--der-->
+                    <div class="mXS">
+                        <div class="top"></div>
+                        <div class="right"></div>
+                        <div class="bottom"></div>
+                        <div class="left"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html> 
